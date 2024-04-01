@@ -8,6 +8,7 @@ public class Calculator {
     public String equation;
     Stack<Double> stack = new Stack<>();
     Stack<Character> operation = new Stack<>();
+    Stack <String> eq = new Stack<>();
     double first;
     char sec;
     public static double bottom_ans =0;
@@ -18,25 +19,7 @@ public class Calculator {
         this.first = first;
         this.sec = sec;
     }
-    public double calcBottom(){
-        switch(sec){
-            case '+':
-                bottom_ans+=first;
-                break;
 
-            case '-':
-                bottom_ans-=first;
-                break;
-            case '*':
-                bottom_ans*=first;
-                break;
-            case '/':
-                bottom_ans/=first;
-                break;
-
-        }
-        return bottom_ans;
-    }
 
     public double getBottom_ans() {
         return bottom_ans;
@@ -48,6 +31,8 @@ public class Calculator {
 
     public void magic(){
         System.out.println(equation);
+        StringBuilder str = new StringBuilder();
+
         int i=0;
         while(i<equation.length()){
             char ch = equation.charAt(i);
@@ -80,6 +65,7 @@ public class Calculator {
                 }
                 System.out.println(val);
                 stack.push(val);
+                eq.push(val+"");
 
             }
 
@@ -88,6 +74,22 @@ public class Calculator {
 //        1 + 2 * 3
 //        1     2       3
 //        return 0;
+    }
+    public double compUwu(){
+        double first,second = 0;
+        String value;
+        System.out.println("dedaf");
+        while(eq.size() != 1){
+            value = eq.pop();
+            if(value == "+"){
+                first = Double.parseDouble(value);
+                System.out.println(first+second+"aaa");
+                eq.push((first+second)+"");
+            }else{
+                second = Double.parseDouble(value);
+            }
+        }
+        return Double.parseDouble(eq.pop());
     }
 
     public double comp(){

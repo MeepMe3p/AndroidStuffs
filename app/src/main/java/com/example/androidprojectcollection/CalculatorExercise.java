@@ -24,6 +24,7 @@ public class CalculatorExercise extends AppCompatActivity {
         Calculator bottom_calculator = new Calculator(first_num,'+');
 
     Stack<Double> numbers = new Stack<Double>();
+    double bottom_ans = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class CalculatorExercise extends AppCompatActivity {
         disp.setEnabled(false);
         bottom = (EditText) findViewById(R.id.tfTemp);
         bottom.setEnabled(false);
+//        bottom.setText("0");
 
 
         nine = findViewById(R.id.btnNine);
@@ -40,7 +42,13 @@ public class CalculatorExercise extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 disp.append("9");
-                bottom.append("9");
+                if(has){
+                    bottom.setText("9");
+                    has = false;
+                }else{
+                    bottom.append("9");
+
+                }
 
             }
         });
@@ -49,7 +57,13 @@ public class CalculatorExercise extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 disp.append("8");
-                bottom.append("8");
+                if(has){
+                    bottom.setText("8");
+                    has = false;
+                }else{
+                    bottom.append("8");
+
+                }
             }
         });
         seven = (Button)findViewById(R.id.btnSeven);
@@ -57,7 +71,13 @@ public class CalculatorExercise extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 disp.append("7");
-                bottom.append("7");
+                if(has){
+                    bottom.setText("7");
+                    has = false;
+                }else{
+                    bottom.append("7");
+
+                }
 
             }
         });
@@ -66,7 +86,13 @@ public class CalculatorExercise extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 disp.append("6");
-                bottom.append("6");
+                if(has){
+                    bottom.setText("6");
+                    has = false;
+                }else{
+                    bottom.append("6");
+
+                }
 
             }
         });
@@ -75,7 +101,13 @@ public class CalculatorExercise extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 disp.append("5");
-                bottom.append("5");
+                if(has){
+                    bottom.setText("5");
+                    has = false;
+                }else{
+                    bottom.append("5");
+
+                }
 
             }
         });
@@ -84,7 +116,13 @@ public class CalculatorExercise extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 disp.append("4");
-                bottom.append("4");
+                if(has){
+                    bottom.setText("4");
+                    has = false;
+                }else{
+                    bottom.append("4");
+
+                }
 
             }
         });
@@ -143,13 +181,12 @@ public class CalculatorExercise extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 first_num = Double.parseDouble(String.valueOf(bottom.getText()));
-//                bottom_calculator
                 bottom_calculator.setBottom_ans(first_num+bottom_calculator.getBottom_ans()) ;
 
                 disp.append("+");
                 has = true;
-                bottom.setText("");
-                bottom.setText(bottom_calculator.getBottom_ans()+"");
+                bottom_ans += first_num;
+                bottom.setText(bottom_ans+"");
                 selected = 0;
             }
         });
@@ -158,10 +195,18 @@ public class CalculatorExercise extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                first_num = Double.parseDouble(String.valueOf(disp.getText()));
-                bottom.setText("");
-                disp.append("-");
+//                first_num = Double.parseDouble(String.valueOf(disp.getText()));
+//                bottom.setText("");
+//                disp.append("-");
+//
+//                selected = 1;
+                first_num = Double.parseDouble(String.valueOf(bottom.getText()));
+                bottom_calculator.setBottom_ans(first_num+bottom_calculator.getBottom_ans()) ;
 
+                disp.append("-");
+                has = true;
+                bottom_ans -= first_num;
+                bottom.setText(bottom_ans+"");
                 selected = 1;
             }
         });
@@ -169,20 +214,25 @@ public class CalculatorExercise extends AppCompatActivity {
         mult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
 //                first_num = Double.parseDouble(String.valueOf(bottom.getText()));
-//                bottom.setText("");
+//                bottom_calculator.setBottom_ans(first_num*bottom_calculator.getBottom_ans()) ;
+//
+//
+//
 //                disp.append("*");
+//                bottom.setText("");
+//                has = true;
+//
+//                bottom.setText(bottom_calculator.getBottom_ans()+"");
+//                selected = 2;
                 first_num = Double.parseDouble(String.valueOf(bottom.getText()));
-//                bottom_calculator = new Calculator(first_num,'+');
-                bottom_calculator.setBottom_ans(first_num*bottom_calculator.getBottom_ans()) ;
-
-
+                bottom_calculator.setBottom_ans(first_num+bottom_calculator.getBottom_ans()) ;
 
                 disp.append("*");
-                bottom.setText("");
                 has = true;
-
-                bottom.setText(bottom_calculator.getBottom_ans()+"");
+                bottom_ans *= first_num;
+                bottom.setText(bottom_ans+"");
                 selected = 2;
             }
         });
@@ -190,10 +240,14 @@ public class CalculatorExercise extends AppCompatActivity {
         div.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                first_num = Double.parseDouble(String.valueOf(disp.getText()));
-                bottom.setText("");
-                disp.append("/");
 
+                first_num = Double.parseDouble(String.valueOf(bottom.getText()));
+                bottom_calculator.setBottom_ans(first_num+bottom_calculator.getBottom_ans()) ;
+
+                disp.append("/");
+                has = true;
+                bottom_ans /= first_num;
+                bottom.setText(bottom_ans+"");
                 selected = 3;
             }
         });
@@ -203,6 +257,7 @@ public class CalculatorExercise extends AppCompatActivity {
             public void onClick(View view) {
                 disp.setText("");
                 bottom.setText("");
+                bottom_ans = 0;
             }
         });
         dot = (Button) findViewById(R.id.btnDot);
@@ -220,11 +275,12 @@ public class CalculatorExercise extends AppCompatActivity {
             public void onClick(View view) {
                 second_num = Double.parseDouble(String.valueOf(bottom.getText()));
 
-//                disp.setText(calculator.calculate()+"");
                 calculator = new Calculator(String.valueOf(disp.getText()));
 
                 calculator.magic();
+                //TODO UWU UNCOMMENT UBOS
                 disp.setText(calculator.comp()+"");
+//                disp.setText(calculator.compUwu()+"");
 
 
 
@@ -233,23 +289,23 @@ public class CalculatorExercise extends AppCompatActivity {
 
                 switch(selected){
                     case 0:
-                        double sum = first_num+second_num;
-                        bottom.setText(""+sum);
+                        bottom_ans += second_num;
+                        bottom.setText(""+bottom_ans);
                         break;
                     case 1:
-                        double sub = first_num-second_num;
-                        bottom.setText(""+sub);
+                        bottom_ans -= second_num;
+                        bottom.setText(""+bottom_ans);
                         break;
 
                     case 2:
-                        double pro = first_num*second_num;
-                        bottom.setText(""+pro);
+                        bottom_ans *= second_num;
+                        bottom.setText(""+bottom_ans);
                         break;
                     case 3:
                         double quo;
                         try{
-                            quo = first_num/second_num;
-                            bottom.setText(""+quo);
+                            bottom_ans /= second_num;
+                            bottom.setText(""+bottom_ans);
 
                         }catch(ArithmeticException e){
                             bottom.setText("cant divide zero wahahaha");

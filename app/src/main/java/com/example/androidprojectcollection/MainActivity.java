@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     Button layoutEx;
     Button buttonEx;
     Button calcEx;
+    Button connectEx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent3 = new Intent(MainActivity.this, CalculatorExercise.class);
                 startActivity(intent3);
+            }
+        });
+        connectEx = (Button) findViewById(R.id.btnMatch);
+        connectEx.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent4 = new Intent(MainActivity.this, MatchExercise.class);
+                startActivity(intent4);
             }
         });
 

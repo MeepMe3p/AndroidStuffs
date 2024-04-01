@@ -15,10 +15,10 @@
         android:text="LayoutExercise"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.549"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.272" />
+        app:layout_constraintVertical_bias="0.285" />
 
     <Button
         android:id="@+id/btnButtonExercise"
@@ -45,14 +45,15 @@
         app:layout_constraintVertical_bias="0.45" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/btnMatch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Match 3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.54" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
