@@ -3,10 +3,15 @@ package com.example.androidprojectcollection;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
+import com.example.androidprojectcollection.MatchLogic.Matching;
+
 public class MatchExercise extends AppCompatActivity {
-    Button btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn10,btn11,btn12,btn13,btn14,btn15,btn16,btn17,btn18,btn19,btn20,btn21,btn22,btn23,btn24,btn25;
+    Button btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn10,btn11,btn12,btn13,btn14,btn15,btn16,btn17,btn18,btn19,btn20,btn21,btn22,btn23,btn24,btn25,btnRestart;
+    int ctr = 0;
+    Button selected_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +70,67 @@ public class MatchExercise extends AppCompatActivity {
         btnArray[22] = btn23;
         btnArray[23] = btn24;
         btnArray[24] = btn25;
+
+
+        Matching mb = new Matching(btnArray);
+        btnRestart = findViewById(R.id.btnRestart);
+        mb.restart();
+        int[] colors = mb.getColors();
+        btnRestart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mb.restart();
+                ctr = 0;
+            }
+        });
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn1;
+                    ctr = 1;
+                }else {
+                    ctr = 0;
+                    mb.swap(btn1, selected_button,0);
+                }
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn2;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn2, selected_button,1);
+                }
+            }
+        });
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn3;
+                    ctr = 1;
+                } else{
+                    ctr = 0;
+                    mb.swap(btn3, selected_button,2);
+                }
+            }
+        });
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn4;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn4, selected_button,3);
+                }
+            }
+        });
 
 
 
