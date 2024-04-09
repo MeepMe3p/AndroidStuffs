@@ -131,7 +131,274 @@ public class MatchExercise extends AppCompatActivity {
                 }
             }
         });
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn4;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn4, selected_button,3);
+                }
+            }
+        });
 
+
+
+
+        btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn5;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn5, selected_button,4);
+                }
+            }
+        });
+        btn6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn6;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn6, selected_button,5);
+                }
+            }
+        });
+        btn7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn7;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn7, selected_button,6);
+                }
+            }
+        });
+        btn8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn8;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn8, selected_button,7);
+                }
+            }
+        });
+        btn9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn9;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn9, selected_button,8);
+                }
+            }
+        });
+        btn10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn10;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn10, selected_button,9);
+                }
+            }
+        });
+        btn11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn11;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn11, selected_button,10);
+                }
+            }
+        });
+        btn12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn12;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn12, selected_button,11);
+                }
+            }
+        });
+        btn13.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn13;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn13, selected_button,12);
+                }
+            }
+        });
+        btn14.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn14;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn14, selected_button,13);
+                }
+            }
+        });
+        btn15.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn15;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn15, selected_button,14);
+                }
+            }
+        });
+        btn16.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn16;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn16, selected_button,15);
+                }
+            }
+        });
+        btn17.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn17;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn17, selected_button,16);
+                }
+            }
+        });
+        btn18.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn18;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn18, selected_button,17);
+                }
+            }
+        });
+        btn19.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn19;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn19, selected_button,18);
+                }
+            }
+        });
+        btn20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn20;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn20, selected_button,19);
+                }
+            }
+        });
+        btn21.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn21;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn21, selected_button,20);
+                }
+            }
+        });
+        btn22.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn22;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn22, selected_button,21);
+                }
+            }
+        });
+        btn23.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn23;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn23, selected_button,22);
+                }
+            }
+        });
+        btn24.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn24;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn24, selected_button,23);
+                }
+            }
+        });
+        btn25.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(ctr == 0){
+                    selected_button = btn25;
+                    ctr = 1;
+                }else{
+                    ctr = 0;
+                    mb.swap(btn25, selected_button,24);
+                }
+            }
+        });
 
 
     }

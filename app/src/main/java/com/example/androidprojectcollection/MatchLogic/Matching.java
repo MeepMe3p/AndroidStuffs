@@ -44,18 +44,14 @@ public class Matching {
     }
 
     public void swap(Button btn, Button selectedButton,int pos) {
-        // Get the parent view of the buttons (assuming they share the same parent)
         ViewGroup parentView = (ViewGroup) btn.getParent();
 
-        // Get the indices of the buttons in the parent view
         int index1 = parentView.indexOfChild(btn);
         int index2 = parentView.indexOfChild(selectedButton);
 
-        // Remove the buttons from their current positions
         parentView.removeView(btn);
         parentView.removeView(selectedButton);
 
-        // Add the buttons back to the parent view at swapped positions
         parentView.addView(btn, index2);
         parentView.addView(selectedButton, index1);
         System.out.println("Swappedd");
