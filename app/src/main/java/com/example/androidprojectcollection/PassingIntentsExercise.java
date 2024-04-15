@@ -3,6 +3,7 @@ package com.example.androidprojectcollection;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.AttachedSurfaceControl;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -30,6 +31,13 @@ public class PassingIntentsExercise extends AppCompatActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String fname = tfFirstName.getText().toString();
+                String lname = tfLastName.getText().toString();
+                String email = tfEmail.getText().toString();
+                String birthdate = tfBirthdate.getText().toString();
+
+                String gender;
+//                if()
 
             }
         });
