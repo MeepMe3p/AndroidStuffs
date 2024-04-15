@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     Button buttonEx;
     Button calcEx;
     Button connectEx;
+    Button passingIntents;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent4);
             }
         });
+        passingIntents = (Button) findViewById(R.id.btnPassingIntents);
+        passingIntents.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent5 = new Intent(MainActivity.this,PassingIntentsExercise.class);
+                startActivity(intent5);
+            }
+        });
+
 
     }
 }
