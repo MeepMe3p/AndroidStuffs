@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class PassingIntentsExercise extends AppCompatActivity {
     Button btnSubmit, btnClear;
-    TextView tfEmail, tfFirstName, tfLastName,tfBirthdate;
+    TextView tfEmail, tfFirstName, tfLastName,tfBirthdate,tfPhone,tfCity,tfCountry,tfSchool,tfWaifu;
     RadioButton rbMale, rbFemale, rbOthers;
 
     @Override
@@ -26,6 +26,11 @@ public class PassingIntentsExercise extends AppCompatActivity {
         tfLastName = findViewById(R.id.tfLastName);
         tfEmail = findViewById(R.id.tfEmail);
         tfBirthdate = findViewById(R.id.tfBirthdate);
+        tfCity = findViewById(R.id.tfCity);
+        tfPhone = findViewById(R.id.tfPhone);
+        tfCountry = findViewById(R.id.tfCountry);
+        tfSchool = findViewById(R.id.tfSchool);
+        tfWaifu = findViewById(R.id.tfWaifu);
 
         btnSubmit = findViewById(R.id.btnSubmit);
         btnSubmit.setOnClickListener(new View.OnClickListener() {
@@ -35,9 +40,20 @@ public class PassingIntentsExercise extends AppCompatActivity {
                 String lname = tfLastName.getText().toString();
                 String email = tfEmail.getText().toString();
                 String birthdate = tfBirthdate.getText().toString();
+                String city = tfCity.getText().toString();
+                String phone = tfPhone.getText().toString();
+                String country = tfCountry.getText().toString();
+                String school = tfSchool.getText().toString();
+                String waifu = tfWaifu.getText().toString();
 
                 String gender;
-//                if()
+                if(rbFemale.isChecked()){
+                    gender = "female";
+                }else if(rbMale.isChecked()){
+                    gender = "male";
+                }else{
+                    gender = "others";
+                }
 
             }
         });
@@ -52,6 +68,11 @@ public class PassingIntentsExercise extends AppCompatActivity {
                 rbMale.setChecked(false);
                 rbFemale.setChecked(false);
                 rbOthers.setChecked(false);
+                tfCity.setText("");
+                tfPhone.setText("");
+                tfCountry.setText("");
+                tfSchool.setText("");
+                tfWaifu.setText("");
             }
         });
 
