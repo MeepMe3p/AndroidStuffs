@@ -63,6 +63,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent5);
             }
         });
+        Button btnMenu = findViewById(R.id.btnMenus);
+        btnMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent6 = new Intent(MainActivity.this, MenuActivity.class);
+                startActivity(intent6);
+            }
+        });
 
 
     }
