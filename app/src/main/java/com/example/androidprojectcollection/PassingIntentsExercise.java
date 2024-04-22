@@ -2,6 +2,7 @@ package com.example.androidprojectcollection;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.AttachedSurfaceControl;
 import android.view.View;
@@ -11,8 +12,8 @@ import android.widget.TextView;
 
 public class PassingIntentsExercise extends AppCompatActivity {
     Button btnSubmit, btnClear;
-    TextView tfEmail, tfFirstName, tfLastName,tfBirthdate,tfPhone,tfCity,tfCountry,tfSchool,tfWaifu;
-    RadioButton rbMale, rbFemale, rbOthers;
+    TextView tfEmail, tfFirstName, tfLastName,tfBirthdate,tfPhone,tfCity,tfCountry,tfSchool,tfWaifu,tfPet;
+    RadioButton rbMale, rbFemale, rbOthers,rbYes,rbNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,9 @@ public class PassingIntentsExercise extends AppCompatActivity {
         tfSchool = findViewById(R.id.tfSchool);
         tfWaifu = findViewById(R.id.tfWaifu);
 
+        rbYes = findViewById(R.id.rbYes);
+        rbNo = findViewById(R.id.rbNo);
+
         btnSubmit = findViewById(R.id.btnSubmit);
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +50,7 @@ public class PassingIntentsExercise extends AppCompatActivity {
                 String school = tfSchool.getText().toString();
                 String waifu = tfWaifu.getText().toString();
 
+                String yesNo;
                 String gender;
                 if(rbFemale.isChecked()){
                     gender = "female";
@@ -54,6 +59,20 @@ public class PassingIntentsExercise extends AppCompatActivity {
                 }else{
                     gender = "others";
                 }
+                if(rbYes.isChecked()){
+                    yesNo = "yes";
+                }else{
+                    yesNo = "no";
+                }
+
+            Intent intent = new Intent(PassingIntentsExercise.this,PassingIntents2.class);
+            intent.putExtra("fname",fname); intent.putExtra("lname",lname);
+            intent.putExtra("email", email); intent.putExtra("birthdate",birthdate);
+            intent.putExtra("city", city); intent.putExtra("phone",phone);
+            intent.putExtra("country", country); intent.putExtra("school",school);
+            intent.putExtra("gender",gender); intent.putExtra("yesNo",yesNo);
+            intent.putExtra("waifu",waifu);
+            startActivity(intent);
 
             }
         });
@@ -68,6 +87,8 @@ public class PassingIntentsExercise extends AppCompatActivity {
                 rbMale.setChecked(false);
                 rbFemale.setChecked(false);
                 rbOthers.setChecked(false);
+                rbYes.setChecked(false);
+                rbNo.setChecked(false);
                 tfCity.setText("");
                 tfPhone.setText("");
                 tfCountry.setText("");
@@ -75,6 +96,7 @@ public class PassingIntentsExercise extends AppCompatActivity {
                 tfWaifu.setText("");
             }
         });
+
 
     }
 }
